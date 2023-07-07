@@ -7,8 +7,10 @@ export function activate(context: vscode.ExtensionContext) {
             const document = editor.document;
             const selection = editor.selection;
             const text = document.getText(selection);
+            const encoder = new TextEncoder();
+            const encodedText = encoder.encode(text);
             if (text) {
-                showTextAboveSelection(`${text.length}byte`);
+                showTextAboveSelection(`${encodedText.length}byte`);
             } else {
                 console.log('text not detected.');
             }
