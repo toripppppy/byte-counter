@@ -1,2 +1,2 @@
 # byte-counter
-
+count len
